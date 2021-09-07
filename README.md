@@ -10,3 +10,8 @@ $ kubectl proxy
 ```
 3. go to this link below:
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+
+### Label & Selector
+
+1. service's selector is match for pod's label in the deployment file. (not the deployment's label itself)

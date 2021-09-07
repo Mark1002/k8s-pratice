@@ -1,21 +1,23 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: frontend
+  name: myapp-deployment
   labels:
-    app: guestbook
     tier: frontend
 spec:
   # modify replicas according to your case
-  replicas: 3
+  replicas: 6
   selector:
     matchLabels:
-      tier: frontend
+      app: myapp
   template:
     metadata:
+      name: mynginx
       labels:
-        tier: frontend
+        app: myapp
     spec:
       containers:
-      - name: php-redis
-        image: gcr.io/google_samples/gb-frontend:v3
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
