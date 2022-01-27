@@ -2,4 +2,4 @@
 
 set -ex
 
-gcloud container clusters delete mark-k8s
+gcloud container clusters delete "$CLUSTER_NAME" --region us-west1
