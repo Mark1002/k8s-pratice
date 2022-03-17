@@ -2,4 +2,4 @@
 
 set -ex
 
-gcloud container clusters delete "$CLUSTER_NAME" --region us-west1
+gcloud container clusters delete "$CLUSTER_NAME" --zone us-west1-b

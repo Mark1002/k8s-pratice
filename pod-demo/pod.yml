@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: web
-  labels:
-    app: web
+  name: workload-identity-test
+  namespace: ladygaga
 spec:
   containers:
-  - name: frontend
-    image: nginx
-    ports:
-    - containerPort: 80
+  - image: google/cloud-sdk:slim
+    name: workload-identity-test
+    command: ["sleep","infinity"]
+  serviceAccountName: taiwan-no1
+  nodeSelector:
+    iam.gke.io/gke-metadata-server-enabled: "true"
